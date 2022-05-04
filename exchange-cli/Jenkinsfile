@@ -24,5 +24,12 @@ pipeline {
                 }
             }
         }
+        stage('Functional Tests') {
+            steps {
+                dir ('exchange-cli') {
+                    sh "npm run test:functional"
+                }
+            }
+        }
     }
 }
